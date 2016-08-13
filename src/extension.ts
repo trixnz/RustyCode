@@ -8,6 +8,7 @@ import PathService from './services/pathService';
 import {CommandService, ErrorFormat} from './services/commandService';
 import WorkspaceSymbolService from './services/workspaceSymbolService';
 import DocumentSymbolService from './services/documentSymbolService';
+import offerToInstallTools from './installTools';
 
 export function activate(ctx: vscode.ExtensionContext): void {
     // Set path to Rust language sources
@@ -117,6 +118,7 @@ export function activate(ctx: vscode.ExtensionContext): void {
     }));
 
     updateErrorFormatFlags();
+    offerToInstallTools();
 
     // Commands
     // Cargo build
